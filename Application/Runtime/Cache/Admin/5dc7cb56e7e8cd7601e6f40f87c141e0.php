@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>	<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -286,7 +286,7 @@
 								<img class="nav-user-photo" src="/Public/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									<?php echo ($_SESSION['admin_username']); ?>
+									<?php echo ($_COOKIE['admin_username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -339,13 +339,10 @@ $(document).ready(function(){
 	});
 });
 </script>
-
-		<!-- /section:basics/navbar.layout -->
-		<div class="main-container" id="main-container">
-
-			<!-- #section:basics/sidebar -->
-
-				<div id="sidebar" class="sidebar responsive">
+	<!-- /section:basics/navbar.layout -->
+	<div class="main-container" id="main-container">
+		<!-- #section:basics/sidebar -->
+					<div id="sidebar" class="sidebar responsive">
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
@@ -381,7 +378,7 @@ $(document).ready(function(){
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-<?php use Common\Controller\AuthController; use Think\Auth; $m = M('auth_rule'); $field = 'id,name,title,css'; $data = $m->field($field)->where('pid=0 AND status=1')->select(); $auth = new Auth(); foreach ($data as $k=>$v){ if(!$auth->check($v['name'], cookie('aid')) && cookie('aid') != 1){ unset($data[$k]); } } ?>
+<?php use Common\Controller\AuthController; use Think\Auth; $m = M('auth_rule'); $field = 'id,name,title,css,sort'; $data = $m->field($field)->where('pid=0 AND status=1')->order('sort')->select(); $auth = new Auth(); foreach ($data as $k=>$v){ if(!$auth->check($v['name'], cookie('aid')) && cookie('aid') != 1){ unset($data[$k]); } } ?>
 
 <?php if(is_array($data)): foreach($data as $key=>$v): ?><li class="<?php if(CONTROLLER_NAME == $v['name']): ?>active open<?php endif; ?>"><!--open代表打开状态-->
 						<a href="#" class="dropdown-toggle">
@@ -396,7 +393,7 @@ $(document).ready(function(){
 						<b class="arrow"></b>
 
 						<ul class="submenu">
-    <?php $m = M('auth_rule'); $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->select(); foreach ($dataa as $kk=>$vv){ if(!$auth->check($vv['name'], cookie('aid')) && cookie('aid') != 1){ unset($dataa[$kk]); } } ?>
+    <?php $m = M('auth_rule'); $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->order('sort')->select(); foreach ($dataa as $kk=>$vv){ if(!$auth->check($vv['name'], cookie('aid')) && cookie('aid') != 1){ unset($dataa[$kk]); } } ?>
     <?php if(is_array($dataa)): foreach($dataa as $key=>$j): ?><li class="<?php if(($_COOKIE['s'] == $j['id'])): ?>active<?php endif; ?>">
 								<a href="<?php echo U($j['name'],array('s'=>$j['id']));?>">
 									<i class="menu-icon fa fa-caret-right"></i>
@@ -424,54 +421,79 @@ $(document).ready(function(){
 			<div class="main-content">
 				<div class="main-content-inner">
 					<div class="page-content">
-							<div class="row">
-							    <div class="col-xs-12">
-										<div>
-                                        <form id="leftnav" name="leftnav" method="post" action="" >
-                                        <input type="hidden" name="checkk" id="checkk" value="1" /><!--用于判断操作类型-->
-											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
-												<thead>
-													<tr>
-														<th width="5%" class="center">
+						<div class="row">
+							<div class="col-xs-12">
+								<div>
+									<form id="leftnav" name="leftnav" method="post" action="">
+										<input type="hidden" name="checkk" id="checkk" value="1"/>
+										<!-- 用于判断操作类型 -->
+										<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+											<thead>
+												<tr>
+													<th width="5%" class="center">
+														<label class="pos-rel">
+															<input type="checkbox" class="ace"  id='chkAll' onclick='CheckAll(this.form)' value="全选"/>
+															<span class="lbl"></span>
+														</label>
+													</th>
+													<th width="37%">
+														导航标题
+													</th>
+													<th width="16%">
+														操作方法
+													</th>
+													<th width="13%">
+														开启状态
+													</th>
+													<th width="13%">
+														排序
+													</th>
+													<th width="22%" style="border-right:#CCC solid 1px;">
+														操作
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php if(is_array($news)): foreach($news as $key=>$v): ?><tr>
+														<td align="center">
 															<label class="pos-rel">
-																<input type="checkbox" class="ace"  id='chkAll' onclick='CheckAll(this.form)' value="全选"/>
-															<span class="lbl"></span>															</label>														</th>
-													  <th width="37%">导航标题</th>
-													  <th width="16%">操作方法</th>
-													  <th width="13%">开启状态</th>
-													  <th width="13%">排序</th>
-													  <th width="22%" style="border-right:#CCC solid 1px;">操作</th>
-												  </tr>
-												</thead>
-
-												<tbody>
-                                                
-                                                <?php if(is_array($news)): foreach($news as $key=>$v): ?><tr>
-														<td></td>
-
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td>
-															<div class="hidden-sm hidden-xs action-buttons">
-																<a class="green" href="<?php echo U('leftnavedit',array('adminnav_id'=>$v['adminnav_id']));?>" title="修改">
-																	<i class="ace-icon fa fa-pencil bigger-130"></i>																</a>
-																<a class="red" href="javascript:;" onclick="return del(<?php echo ($v["adminnav_id"]); ?>);" title="删除">
-																	<i class="ace-icon fa fa-trash-o bigger-130"></i>																</a>															</div>														</td>
-													</tr><?php endforeach; endif; ?>   
-                                                  <tr>
-													  <td align="left"><button id="btnsubmit" class="btn btn-white btn-yellow btn-sm">删</button> </td>
-													  <td colspan="6" align="right"><?php echo ($page); ?></td>
-												  </tr>
+																<input name='n_id[]' id="navid" class="ace"  type='checkbox' value='<?php echo ($v["n_id"]); ?>'/>
+																<span class="lbl"></span>
+															</label>
+															<td>
+																<?php echo ($v["news_title"]); ?>
+															</td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td>
+																<div class="hidden-sm hidden-xs action-buttons">
+																	<a class="green" href="<?php echo U('leftnavedit',array('adminnav_id'=> $v['adminnav_id']));?>" title="修改">
+																		<i class="ace-icon fa fa-pencil bigger-130"></i>
+																	</a>
+																	<a class="red" href="javascript:;" onclick="return del(<?php echo ($v["n_id"]); ?>);" title="删除">
+																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																	</a>
+																</div>
+															</td>
+														</tr><?php endforeach; endif; ?>
+													<tr>
+														<td align="left">
+															<button id="btnsubmit" class="btn btn-white btn-yellow btn-sm">
+																删
+															</button>
+														</td>
+														<td colspan="6" align="right">
+															<?php echo ($page); ?>
+														</td>
+													</tr>
 												</tbody>
 											</table>
-                                          </form>
-							    		</div>
+										</form>
 									</div>
 								</div>
-
-						<div class="row">
+							</div>
+													<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="hidden">
@@ -495,12 +517,11 @@ $(document).ready(function(){
 
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
-
-
+							</div>
+							<!-- /.page-content  -->
+						</div>
+					</div>
+					<!-- /.main-content  -->
 <script>
 $(function(){
 $("#btnsubmit").click(function(){
@@ -518,7 +539,20 @@ $('#leftnav').attr("action", "<?php echo U('leftnavorder');?>");
 function del(id){
 		layer.confirm('你确定要删除吗？', {icon: 3}, function(index){
 	    layer.close(index);
-	    window.location.href="/index.php/Admin/News/leftnavdel/adminnav_id/"+id+"";
+	    $.get("/index.php/Admin/News/leftnavalldel", {n_id : id}, function(data){
+	    	if(data.status==1){
+				layer.alert(data.info, {icon: 6}, function(index){
+	 			layer.close(index);
+				window.location.href=data.url;
+				});
+			}else{
+				layer.alert(data.info, {icon: 6}, function(index){
+	 			layer.close(index);
+				window.location.href=data.url;
+				});
+			}
+	    })
+	    //window.location.href="/index.php/Admin/News/leftnavalldel/n_id/"+id+"";
 	});
 }
 
@@ -549,50 +583,46 @@ e.checked = form.chkAll.checked;
 </script>
 <script>
 $(function(){
-	$('#leftnav').ajaxForm({
-		beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
-		success: complete, // 这是提交后的方法
-		dataType: 'json'
-	});
-	
-	function checkForm(){
-		if($('#checkk').val()==1){	
-			if( '' == $.trim($('#adminnav_title').val())){
-				var chk_value =[];    
-				$('input[id="navid"]:checked').each(function(){    
-					chk_value.push($(this).val());    
-				});
-				
-				if(!chk_value.length){
-					layer.alert('至少选择一个删除项', {icon: 6}); 
-					return false;
-				}
-			}	
-		}
-	}
-	 
-	function complete(data){
-		if(data.status==1){
-			layer.alert(data.info, {icon: 6}, function(index){
- 			layer.close(index);
-			window.location.href="<?php echo U('Sys/leftnav');?>";
-			});
-		}else{
-			layer.alert(data.info, {icon: 6}, function(index){
- 			layer.close(index);
-			window.location.href="<?php echo U('Sys/leftnav');?>";
-			});
-		}
-	}
+$('#leftnav').ajaxForm({
+	beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+	success: complete, // 这是提交后的方法
+	dataType: 'json'
+});
+
+function checkForm(){
+var chk_value =[];    
+$('input[id="navid"]:checked').each(function(){    
+chk_value.push($(this).val());    
+});
+
+if(!chk_value.length){
+layer.alert('至少选择一个删除项', {icon: 6}); 
+return false;
+}
+}
  
+function complete(data){
+	if(data.status==1){
+		layer.alert(data.info, {icon: 6}, function(index){
+			layer.close(index);
+		window.location.href=data.url;
+		});
+	}else{
+		layer.alert(data.info, {icon: 6}, function(index){
+			layer.close(index);
+		window.location.href=data.url;
+		});
+	}
+}
+
 });
 </script>
-				<div class="footer">
+			<div class="footer">
 				<div class="footer-inner">
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">admin</span>
+							<span class="blue bolder">slackck</span>
 							后台管理系统 &copy; 2015-2016
 						</span>
 					</div>
@@ -648,7 +678,7 @@ $(function(){
 		</script>
 		<script src="/Public/assets/js/jquery.form.js"></script>
 
-    
-		</div><!-- /.main-container -->
-	</body>
+</div>
+<!-- /.main-container  -->
+</body>
 </html>

@@ -62,7 +62,7 @@ p($leftnav_0);die;
     $leftnav_1=$leftnav->where(array('adminnav_leftid'=>$v['adminnav_id'],'adminnav_open'=>1))->select();
     </php>
     <foreach name="leftnav_1" item="j">
-							<li class="<if condition="($_SESSION['s'] eq $j['adminnav_id'])">active</if>">
+							<li class="<if condition="($_COOKIE['s'] eq $j['adminnav_id'])">active</if>">
 								<a href="{:U(''.$v['adminnav_url'].'/'.$j['adminnav_url'],array('s'=>$j['adminnav_id']))}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									{$j.adminnav_title}

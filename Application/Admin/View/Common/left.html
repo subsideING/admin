@@ -38,12 +38,12 @@
 use Common\Controller\AuthController;
 use Think\Auth;
 		$m = M('auth_rule');
-		$field = 'id,name,title,css';
-	    $data = $m->field($field)->where('pid=0 AND status=1')->select();	   
+		$field = 'id,name,title,css,sort';
+	    $data = $m->field($field)->where('pid=0 AND status=1')->order('sort')->select();	   
 	    $auth = new Auth();
 	    //没有权限的菜单不显示
     	foreach ($data as $k=>$v){
-    		if(!$auth->check($v['name'], session('aid')) && session('aid') != 1){
+    		if(!$auth->check($v['name'], cookie('aid')) && cookie('aid') != 1){
     			unset($data[$k]);
     		}
 	    }
@@ -66,16 +66,16 @@ use Think\Auth;
 						<ul class="submenu">
     <php>
 		$m = M('auth_rule');
-	    $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->select();
+	    $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->order('sort')->select();
     	foreach ($dataa as $kk=>$vv){
-    		if(!$auth->check($vv['name'], session('aid')) && session('aid') != 1){
+    		if(!$auth->check($vv['name'], cookie('aid')) && cookie('aid') != 1){
     			unset($dataa[$kk]);
     		}
 	    }
 	
     </php>
     <foreach name="dataa" item="j">
-							<li class="<if condition="($_SESSION['s'] eq $j['id'])">active</if>">
+							<li class="<if condition="($_COOKIE['s'] eq $j['id'])">active</if>">
 								<a href="{:U($j['name'],array('s'=>$j['id']))}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									{$j.title}

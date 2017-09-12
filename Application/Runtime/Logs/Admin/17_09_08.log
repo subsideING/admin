@@ -1,0 +1,356 @@
+[ 2017-09-08T16:18:57+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000778s ]
+
+[ 2017-09-08T16:19:26+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001169s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010802s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010857s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2017-09-08T16:19:38+08:00 ] 127.0.0.1 /index.php/Admin/Login/runlogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001076s ]
+SQL: SHOW COLUMNS FROM `mr_admin` [ RunTime:0.0753s ]
+SQL: SELECT * FROM `mr_admin` WHERE `admin_username` = 'admin' AND `admin_pwd` = '21232f297a57a5a743894a0e4a801fc3' LIMIT 1   [ RunTime:0.0163s ]
+
+[ 2017-09-08T16:19:47+08:00 ] 127.0.0.1 /index.php/Admin/Login/runlogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `mr_admin` [ RunTime:0.0509s ]
+SQL: SELECT * FROM `mr_admin` WHERE `admin_username` = 'admin' AND `admin_pwd` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-09-08T16:20:16+08:00 ] 127.0.0.1 /index.php/Admin/Login/runlogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001454s ]
+SQL: SHOW COLUMNS FROM `mr_admin` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `mr_admin` WHERE `admin_username` = 'xiaoli' AND `admin_pwd` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `mr_admin` SET `admin_hits`=admin_hits+1 WHERE `admin_username` = 'xiaoli' [ RunTime:0.0299s ]
+
+[ 2017-09-08T16:20:17+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `mr_news` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `mr_news` WHERE `news_time` BETWEEN 1504195200 AND 1504858816 ORDER BY news_hits desc LIMIT 0,8   [ RunTime:0.0145s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_news` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_news` WHERE `news_time` >= 1504800000 LIMIT 1   [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_news` WHERE `news_time` BETWEEN 1504713600 AND 1504800000 LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [2] Division by zero D:\phpStudy\WWW\newadmin\Application\Admin\Controller\IndexController.class.php 第 35 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0093s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0092s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: s D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 400 行.
+NOTIC: [8] Undefined index: s D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 400 行.
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: s D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 400 行.
+NOTIC: [8] Undefined index: s D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 400 行.
+NOTIC: [8192] mysql_get_server_info(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 549 行.
+NOTIC: [2] mysql_get_server_info(): Access denied for user ''@'localhost' (using password: NO) D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 549 行.
+NOTIC: [2] mysql_get_server_info(): A link to the server could not be established D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 549 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.270555s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.270654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2017-09-08T16:20:28+08:00 ] 127.0.0.1 /index.php/Admin/Sys/admin_list/s/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0266s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0106s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_admin` [ RunTime:0.0089s ]
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 51 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 54 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 54 行.
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 59 行.
+SQL: SELECT * FROM `mr_admin` ORDER BY admin_id LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0081s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0086s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant admin_open - assumed 'admin_open' D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\4180b128332bb55c64012cd90a13c6c1.php 第 501 行.
+NOTIC: [8] Use of undefined constant admin_open - assumed 'admin_open' D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\4180b128332bb55c64012cd90a13c6c1.php 第 501 行.
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 15 AND `status` = 1  [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002589s ]
+
+[ 2017-09-08T16:20:34+08:00 ] 127.0.0.1 /index.php/Admin/News/news_list/s/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0085s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0099s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_news` [ RunTime:0.0092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_news` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_news` LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0087s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 458 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\5dc7cb56e7e8cd7601e6f40f87c141e0.php 第 460 行.
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 8 AND `status` = 1  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080029s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080084s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000851s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000953s ]
+
+[ 2017-09-08T16:20:38+08:00 ] 127.0.0.1 /index.php/Admin/News/news_column/s/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0223s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0088s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_column` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `mr_column` ORDER BY column_order  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+NOTIC: [8] Undefined index: adminnav_id D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\c59ac52b3b02df022890ed93499bde7e.php 第 466 行.
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 9 AND `status` = 1  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057798s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2017-09-08T16:20:44+08:00 ] 127.0.0.1 /index.php/Admin/Sys/sys/s/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0633s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0086s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `mr_sys` WHERE `sys_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0092s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 2 AND `status` = 1  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048420s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2017-09-08T16:20:47+08:00 ] 127.0.0.1 /index.php/Admin/Sys/wesys.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0083s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+ERR: 非法操作:wesys
+
+[ 2017-09-08T16:20:49+08:00 ] 127.0.0.1 /index.php/Admin/Sys/emailsys.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0300s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0084s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `mr_sys` WHERE `sys_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.0084s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 2 AND `status` = 1  [ RunTime:0.0010s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.068362s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000890s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2017-09-08T16:20:54+08:00 ] 127.0.0.1 /index.php/Admin/Sys/admin_list/s/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0102s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='2' and g.status='1' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.1172s ]
+SQL: SELECT `condition`,`name` FROM `mr_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mr_admin` [ RunTime:0.0085s ]
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 51 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mr_admin` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 54 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 54 行.
+NOTIC: [8] Undefined variable: map D:\phpStudy\WWW\newadmin\Application\Admin\Controller\SysController.class.php 第 59 行.
+SQL: SELECT * FROM `mr_admin` ORDER BY admin_id LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `mr_auth_group_access` [ RunTime:0.0083s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM mr_auth_group_access a INNER JOIN mr_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `mr_auth_rule` [ RunTime:0.1516s ]
+SQL: SELECT `id`,`name`,`title`,`css` FROM `mr_auth_rule` WHERE ( pid=0 AND status=1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 1 AND `status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 7 AND `status` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant admin_open - assumed 'admin_open' D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\4180b128332bb55c64012cd90a13c6c1.php 第 501 行.
+NOTIC: [8] Use of undefined constant admin_open - assumed 'admin_open' D:\phpStudy\WWW\newadmin\Application\Runtime\Cache\Admin\4180b128332bb55c64012cd90a13c6c1.php 第 501 行.
+SQL: SELECT * FROM `mr_auth_rule` WHERE `pid` = 15 AND `status` = 1  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.178262s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.178324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000875s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+

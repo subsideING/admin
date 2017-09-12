@@ -2,7 +2,7 @@
 
 return array(
 'DB_TYPE'   => 'mysql', // 数据库类型
-'DB_HOST'   => 'localhost', // 数据库连接地址
+'DB_HOST'   => '127.0.0.1', // 数据库连接地址
 'DB_NAME'   => 'newadmin', // 数据库名
 'DB_USER'   => 'root', // 数据库用户名
 'DB_PWD'    => 'root', // 数据库密码
@@ -24,6 +24,6 @@ return array(
 'AUTH_USER' => 'mr_admin'// 管理员表
 		),
 		
-'MODULE_ALLOW_LIST' => array( 'Home', 'Admin', ), 
-'DEFAULT_MODULE' => 'Admin', 
+'MODULE_ALLOW_LIST' => array('Home','Admin'),
+'DEFAULT_MODULE' => 'Admin',
 );

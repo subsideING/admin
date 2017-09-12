@@ -26,8 +26,8 @@ class LoginController extends Controller {
 					);
 					M('admin')->where(array('admin_username'=>$admin_username))->setInc('admin_hits',1);
 					M('admin')->save($data);
-					session('aid',$admin['admin_id'],86400); // 指定session保存时间1天
-					session('admin_username',$admin['admin_username'],86400); // 指定session保存时间1天
+					cookie('aid',$admin['admin_id'],86400); // 指定cookie保存时间1天
+					cookie('admin_username',$admin['admin_username'],86400); // 指定cookie保存时间1天
 					$this->success('恭喜您，登陆成功',1,1);
 				}
 		}
@@ -53,7 +53,7 @@ class LoginController extends Controller {
 	}
     
 	public function logout(){
-		session('aid',null);
+		cookie('aid',null);
 		$this->redirect('Login/login');
 	}
 	

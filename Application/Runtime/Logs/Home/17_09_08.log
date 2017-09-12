@@ -1,0 +1,209 @@
+[ 2017-09-08T16:12:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001743s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:07+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:09+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:10+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:10+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:10+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:42+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000896s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:15:58+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:16:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
+[ 2017-09-08T16:18:54+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0133s ]
+SQL: SELECT `sys_name` FROM `mr_sys` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000696s ]
+
+[ 2017-09-08T16:19:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0106s ]
+SQL: SELECT `sys_name` FROM `mr_sys` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+
+[ 2017-09-08T17:31:15+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016640s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0458s ]
+SQL: SELECT `sys_name` FROM `mr_sys` LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011084s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/left.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/footer.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013523s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.036932s ]
+INFO: [ app_end ] --END-- [ RunTime:0.037011s ]
+
+[ 2017-09-08T17:31:38+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0088s ]
+SQL: SELECT `sys_name` FROM `mr_sys` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/left.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/footer.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2017-09-08T17:31:52+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `mr_sys` [ RunTime:0.0702s ]
+SQL: SELECT `sys_name` FROM `mr_sys` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/left.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(./Application/Home/View/Common/footer.html): failed to open stream: No such file or directory D:\phpStudy\WWW\newadmin\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006476s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006528s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+

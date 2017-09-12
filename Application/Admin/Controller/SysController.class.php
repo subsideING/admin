@@ -273,7 +273,7 @@ class SysController extends AuthController {
     }
 
     public function admin_rule_runedit(){
-        if(!IS_AJAX){
+        	if(!IS_AJAX){
     		$this->error('提交方式不正确',0,0);
     	}else{
     		$admin_rule=M('auth_rule');
@@ -326,7 +326,10 @@ class SysController extends AuthController {
     		$this->error('权限配置失败');
     	}
     }
+
+
     
+ 
     
     
     

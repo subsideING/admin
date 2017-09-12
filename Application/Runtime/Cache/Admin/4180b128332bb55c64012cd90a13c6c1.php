@@ -286,7 +286,7 @@
 								<img class="nav-user-photo" src="/Public/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									<?php echo ($_SESSION['admin_username']); ?>
+									<?php echo ($_COOKIE['admin_username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -339,10 +339,10 @@ $(document).ready(function(){
 	});
 });
 </script>
-    <!-- /section:basics/navbar.layout -->
-    <div class="main-container" id="main-container">
-        <!-- #section:basics/sidebar -->
-        			<div id="sidebar" class="sidebar responsive">
+	<!-- /section:basics/navbar.layout -->
+	<div class="main-container" id="main-container">
+		<!-- #section:basics/sidebar -->
+					<div id="sidebar" class="sidebar responsive">
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
@@ -378,7 +378,7 @@ $(document).ready(function(){
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-<?php use Common\Controller\AuthController; use Think\Auth; $m = M('auth_rule'); $field = 'id,name,title,css'; $data = $m->field($field)->where('pid=0 AND status=1')->select(); $auth = new Auth(); foreach ($data as $k=>$v){ if(!$auth->check($v['name'], session('aid')) && session('aid') != 1){ unset($data[$k]); } } ?>
+<?php use Common\Controller\AuthController; use Think\Auth; $m = M('auth_rule'); $field = 'id,name,title,css,sort'; $data = $m->field($field)->where('pid=0 AND status=1')->order('sort')->select(); $auth = new Auth(); foreach ($data as $k=>$v){ if(!$auth->check($v['name'], cookie('aid')) && cookie('aid') != 1){ unset($data[$k]); } } ?>
 
 <?php if(is_array($data)): foreach($data as $key=>$v): ?><li class="<?php if(CONTROLLER_NAME == $v['name']): ?>active open<?php endif; ?>"><!--open代表打开状态-->
 						<a href="#" class="dropdown-toggle">
@@ -393,8 +393,8 @@ $(document).ready(function(){
 						<b class="arrow"></b>
 
 						<ul class="submenu">
-    <?php $m = M('auth_rule'); $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->select(); foreach ($dataa as $kk=>$vv){ if(!$auth->check($vv['name'], session('aid')) && session('aid') != 1){ unset($dataa[$kk]); } } ?>
-    <?php if(is_array($dataa)): foreach($dataa as $key=>$j): ?><li class="<?php if(($_SESSION['s'] == $j['id'])): ?>active<?php endif; ?>">
+    <?php $m = M('auth_rule'); $dataa = $m->where(array('pid'=>$v['id'],'status'=>1))->order('sort')->select(); foreach ($dataa as $kk=>$vv){ if(!$auth->check($vv['name'], cookie('aid')) && cookie('aid') != 1){ unset($dataa[$kk]); } } ?>
+    <?php if(is_array($dataa)): foreach($dataa as $key=>$j): ?><li class="<?php if(($_COOKIE['s'] == $j['id'])): ?>active<?php endif; ?>">
 								<a href="<?php echo U($j['name'],array('s'=>$j['id']));?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									<?php echo ($j["title"]); ?>
@@ -417,151 +417,145 @@ $(document).ready(function(){
 				</script>
 			</div>
 
-            <!-- /section:basics/sidebar -->
-            <div class="main-content">
-                <div class="main-content-inner">
-                    <div class="page-content">
-                        <div class="row maintop">
-                            <div class="col-xs-12 col-sm-2">
-                                <a href="/index.php/Admin/Sys/admin_list_add">
-                                    <button class="btn btn-xs btn-danger">
-                                        <i class="ace-icon fa fa-bolt bigger-110">
-                                        </i>
-                                        添加管理员
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="col-xs-12 col-sm-3">
-                                <form name="admin_list_sea" class="form-search" method="post" action="/index.php/Admin/Sys/admin_list">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="ace-icon fa fa-check">
-                                            </i>
-                                        </span>
-                                        <input type="text" name="val" id="val" class="form-control search-query admin_sea" value="<?php echo ($testval); ?>" placeholder="输入需查询的用户名"/>
-                                        <span class="input-group-btn">
-                                            <button type="submit" class="btn btn-xs  btn-purple">
-                                                <span class="ace-icon fa fa-search icon-on-right bigger-110">
-                                                </span>
-                                                搜索
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="input-group-btn">
-                                <a href="/index.php/Admin/Sys/admin_list">
-                                    <button type="button" class="btn btn-xs  btn-purple">
-                                        <span class="ace-icon fa fa-globe icon-on-right bigger-110">
-                                        </span>
-                                        显示全部
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div>
-                                    <form id="leftnav" name="leftnav" method="post" action="">
-                                        <input type="hidden" name="checkk" id="checkk" value="1"/>
-                                        <!-- 用于判断操作类型 -->
-                                            <table width="100%" class="table table-striped table-bordered table-hover" id="dynamic-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th width="10%">
-                                                            登录用户名
-                                                        </th>
-                                                        <th width="17%">
-                                                            邮箱
-                                                        </th>
-                                                        <th width="10%">
-                                                            用户组
-                                                        </th>
-                                                        <th width="11%">
-                                                            真实姓名
-                                                        </th>
-                                                        <th width="12%">
-                                                            电话号码
-                                                        </th>
-                                                        <th width="8%">
-                                                            登陆次数
-                                                        </th>
-                                                        <th width="15%">
-                                                            IP地址
-                                                        </th>
-                                                        <th width="9%" style="border-right:#CCC solid 1px;">
-                                                            状态
-                                                        </th>
-                                                        <th width="8%" style="border-right:#CCC solid 1px;">
-                                                            操作
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php if(is_array($admin_list)): foreach($admin_list as $key=>$v): ?><tr>
-                                                            <td height="28">
-                                                                <?php echo ($v["admin_username"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["admin_email"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["group"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["admin_realname"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["admin_tel"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["admin_hits"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo ($v["admin_ip"]); ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php if($v[admin_open] == 1): ?><a class="red" href="javascript:;" onclick="return stateyes(<?php echo ($v["admin_id"]); ?>);" title="已开启">
-                                                                        <div id="zt<?php echo ($v["admin_id"]); ?>">
-                                                                            <button class="btn btn-minier btn-yellow">
-                                                                                状态开启
-                                                                            </button>
-                                                                        </div>
-                                                                    </a>
-                                                                    <?php else: ?>
-                                                                        <a class="red" href="javascript:;" onclick="return stateyes(<?php echo ($v["admin_id"]); ?>);" title="已禁用">
-                                                                            <div id="zt<?php echo ($v["admin_id"]); ?>">
-                                                                                <button class="btn btn-minier btn-danger">
-                                                                                    状态禁用
-                                                                                </button>
-                                                                            </div>
-                                                                        </a><?php endif; ?>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="hidden-sm hidden-xs action-buttons">
-                                                                        <a class="green" href="<?php echo U('admin_list_edit',array('admin_id'=> $v['admin_id']));?>" title="修改">
-                                                                            <i class="ace-icon fa fa-pencil bigger-130">
-                                                                            </i>
-                                                                        </a>
-                                                                        <a class="red" href="javascript:;" onclick="return del(<?php echo ($v["admin_id"]); ?>);" title="删除">
-                                                                            <i class="ace-icon fa fa-trash-o bigger-130">
-                                                                            </i>
-                                                                        </a>
-                                                                    </div>
-                                                                </td>
-                                                            </tr><?php endforeach; endif; ?>
-                                                        <tr>
-                                                            <td height="50" colspan="10" align="left">
-                                                                <?php echo ($page); ?>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                						<div class="row">
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="page-content">
+						<div class="row maintop">
+							<div class="col-xs-12 col-sm-2">
+								<a href="/index.php/Admin/Sys/admin_list_add">
+									<button class="btn btn-xs btn-danger">
+										<i class="ace-icon fa fa-bolt bigger-110"></i>
+										添加管理员
+									</button>
+								</a>
+							</div>
+							<div class="col-xs-12 col-sm-3">
+								<form name="admin_list_sea" class="form-search" method="post" action="/index.php/Admin/Sys/admin_list">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="ace-icon fa fa-check"></i>
+										</span>
+										<input type="text" name="val" id="val" class="form-control search-query admin_sea" value="<?php echo ($testval); ?>" placeholder="输入需查询的用户名"/>
+										<span class="input-group-btn">
+											<button type="submit" class="btn btn-xs  btn-purple">
+												<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+												搜索
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+							<div class="input-group-btn">
+								<a href="/index.php/Admin/Sys/admin_list">
+									<button type="button" class="btn btn-xs  btn-purple">
+										<span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>
+										显示全部
+									</button>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div>
+									<form id="leftnav" name="leftnav" method="post" action="">
+										<input type="hidden" name="checkk" id="checkk" value="1"/>
+										<!-- 用于判断操作类型 -->
+											<table width="100%" class="table table-striped table-bordered table-hover" id="dynamic-table">
+												<thead>
+													<tr>
+														<th width="10%">
+															登录用户名
+														</th>
+														<th width="17%">
+															邮箱
+														</th>
+														<th width="10%">
+															用户组
+														</th>
+														<th width="11%">
+															真实姓名
+														</th>
+														<th width="12%">
+															电话号码
+														</th>
+														<th width="8%">
+															登陆次数
+														</th>
+														<th width="15%">
+															IP地址
+														</th>
+														<th width="9%" style="border-right:#CCC solid 1px;">
+															状态
+														</th>
+														<th width="8%" style="border-right:#CCC solid 1px;">
+															操作
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php if(is_array($admin_list)): foreach($admin_list as $key=>$v): ?><tr>
+															<td height="28">
+																<?php echo ($v["admin_username"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["admin_email"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["group"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["admin_realname"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["admin_tel"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["admin_hits"]); ?>
+															</td>
+															<td>
+																<?php echo ($v["admin_ip"]); ?>
+															</td>
+															<td>
+																<?php if($v[admin_open] == 1): ?><a class="red" href="javascript:;" onclick="return stateyes(<?php echo ($v["admin_id"]); ?>);" title="已开启">
+																		<div id="zt<?php echo ($v["admin_id"]); ?>">
+																			<button class="btn btn-minier btn-yellow">
+																				状态开启
+																			</button>
+																		</div>
+																	</a>
+																	<?php else: ?>
+																		<a class="red" href="javascript:;" onclick="return stateyes(<?php echo ($v["admin_id"]); ?>);" title="已禁用">
+																			<div id="zt<?php echo ($v["admin_id"]); ?>">
+																				<button class="btn btn-minier btn-danger">
+																					状态禁用
+																				</button>
+																			</div>
+																		</a><?php endif; ?>
+																</td>
+																<td>
+																	<div class="hidden-sm hidden-xs action-buttons">
+																		<a class="green" href="<?php echo U('admin_list_edit',array('admin_id'=> $v['admin_id']));?>" title="修改">
+																			<i class="ace-icon fa fa-pencil bigger-130"></i>
+																		</a>
+																		<a class="red" href="javascript:;" onclick="return del(<?php echo ($v["admin_id"]); ?>);" title="删除">
+																			<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																		</a>
+																	</div>
+																</td>
+															</tr><?php endforeach; endif; ?>
+														<tr>
+															<td height="50" colspan="10" align="left">
+																<?php echo ($page); ?>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</form>
+										</div>
+									</div>
+								</div>
+														<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="hidden">
@@ -569,7 +563,7 @@ $(document).ready(function(){
 									<div id="sidebar2" class="sidebar h-sidebar navbar-collapse collapse">
 										<ul class="nav nav-list">
                                         
-    <?php $m = M('auth_rule'); $dataaa = $m->where(array('pid'=>$_SESSION['s'],'status'=>1))->select(); foreach ($dataaa as $kkk=>$vvv){ if(!$auth->check($vvv['name'], SESSION('aid')) && SESSION('aid') != 1){ unset($dataaa[$kkk]); } } ?>
+    <?php $m = M('auth_rule'); $dataaa = $m->where(array('pid'=>$_COOKIE['s'],'status'=>1))->select(); foreach ($dataaa as $kkk=>$vvv){ if(!$auth->check($vvv['name'], cookie('aid')) && cookie('aid') != 1){ unset($dataaa[$kkk]); } } ?>
     <?php if(is_array($dataaa)): foreach($dataaa as $key=>$k): ?><li>
 												<a href="<?php echo U(''.$k['name'].'');?>">
 													<o class="font12 <?php if((CONTROLLER_NAME.'/'.ACTION_NAME == $k['name'])): ?>rigbg<?php endif; ?>"><?php echo ($k["title"]); ?></o>
@@ -585,50 +579,50 @@ $(document).ready(function(){
 
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-                                </div>
-                                <!-- /.page-content  -->
-                                </div>
-                            </div>
-                            <!-- /.main-content  -->
-                                <script>
-                                function del(id){
-                                	if(id==1){
-                                	layer.alert('超级管理员不可删除', {icon: 4});
-                                	return false;
-                                	}
-                                	layer.confirm('你确定要删除吗？', {icon: 3}, function(index){
-                                	layer.close(index);
-                                	window.location.href="/index.php/Admin/Sys/admin_list_del/admin_id/"+id+"";
-                                	});
-                                }
-                                
-                                function stateyes(val){
-                                		  $.post('<?php echo U("admin_list_state");?>',
-                                		  {x:val},
-                                	function(data){
-                                	var $v=val;
-                                		if(data.status){
-                                			if(data.info=='状态禁止'){
-                                				var a='<button class="btn btn-minier btn-danger">状态禁用</button>'
-                                				$('#zt'+val).html(a);
-                                				layer.alert(data.info, {icon: 5});
-                                			}else{
-                                				var b='<button class="btn btn-minier btn-yellow">状态开启</button>'
-                                				$('#zt'+val).html(b);
-                                				layer.alert(data.info, {icon: 6});
-                                			}
-                                			
-                                		}
-                                	});
-                                	return false;
-                                }
-                                </script>
-                                			<div class="footer">
+								</div>
+								<!-- /.page-content  -->
+								</div>
+							</div>
+							<!-- /.main-content  -->
+								<script>
+								function del(id){
+									if(id==1){
+									layer.alert('超级管理员不可删除', {icon: 4});
+									return false;
+									}
+									layer.confirm('你确定要删除吗？', {icon: 3}, function(index){
+									layer.close(index);
+									window.location.href="/index.php/Admin/Sys/admin_list_del/admin_id/"+id+"";
+									});
+								}
+								
+								function stateyes(val){
+										  $.post('<?php echo U("admin_list_state");?>',
+										  {x:val},
+									function(data){
+									var $v=val;
+										if(data.status){
+											if(data.info=='状态禁止'){
+												var a='<button class="btn btn-minier btn-danger">状态禁用</button>'
+												$('#zt'+val).html(a);
+												layer.alert(data.info, {icon: 5});
+											}else{
+												var b='<button class="btn btn-minier btn-yellow">状态开启</button>'
+												$('#zt'+val).html(b);
+												layer.alert(data.info, {icon: 6});
+											}
+											
+										}
+									});
+									return false;
+								}
+								</script>
+											<div class="footer">
 				<div class="footer-inner">
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">admin</span>
+							<span class="blue bolder">slackck</span>
 							后台管理系统 &copy; 2015-2016
 						</span>
 					</div>
@@ -684,7 +678,7 @@ $(document).ready(function(){
 		</script>
 		<script src="/Public/assets/js/jquery.form.js"></script>
 
-                                </div>
-                                <!-- /.main-container  -->
-                                </body>
-                            </html>
+								</div>
+								<!-- /.main-container  -->
+								</body>
+							</html>

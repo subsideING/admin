@@ -12,6 +12,7 @@ class NewsController extends AuthController {
     	$Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
     	$show= $Page->show();// 分页显示输出
     	$news=M('news')->limit($Page->firstRow.','.$Page->listRows)->select();
+    	//dump($news);die;
     	$this->assign('news',$news);
     	$this->assign('page',$show);
 		$this->display();
@@ -75,7 +76,19 @@ class NewsController extends AuthController {
 		$this->redirect('news_column');
 	}
 	
-	
+	public function leftnavalldel(){
+        $id =  I('n_id');
+        if(is_array($id)){
+        	$id = implode(',', $id);
+        }
+        $rest = M('news')->where("n_id in ($id)")->delete();
+        if($rest){
+        	$this->success('删除成功',U('News/news_list'),1);
+        }else{
+        	$this->success('删除失败',U('News/news_list'),1);
+        }
+       
+    }
 	
 	
 	

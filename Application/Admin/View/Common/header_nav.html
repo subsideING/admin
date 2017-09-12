@@ -8,9 +8,9 @@
                                         
     <php>
 		$m = M('auth_rule');
-	    $dataaa = $m->where(array('pid'=>$_SESSION['s'],'status'=>1))->select();
+	    $dataaa = $m->where(array('pid'=>$_COOKIE['s'],'status'=>1))->select();
     	foreach ($dataaa as $kkk=>$vvv){
-    		if(!$auth->check($vvv['name'], SESSION('aid')) && SESSION('aid') != 1){
+    		if(!$auth->check($vvv['name'], cookie('aid')) && cookie('aid') != 1){
     			unset($dataaa[$kkk]);
     		}
 	    }

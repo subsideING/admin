@@ -56,7 +56,7 @@ $(function(){
 		if(data.status==1){
 			layer.alert(data.info, {icon: 6}, function(index){
  			layer.close(index);
-			window.location.href="{:U('Sys/admin_rule')}";
+			window.location.href=data.url;
 			});
 		}else{
 			alert(data.info);
