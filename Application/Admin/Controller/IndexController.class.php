@@ -4,7 +4,7 @@ use Think\Controller;
 use Common\Controller\AuthController;
 use Think\Auth;
 
-class IndexController extends Controller {
+class IndexController extends AuthController {
 
     public function index(){
     	$news=M('news');

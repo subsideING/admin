@@ -18,7 +18,7 @@ class AuthController extends Controller {
 		cookie('s',I('s'),86400);
 		//session不存在时，不允许直接访问
 		if(!cookie('aid')){
-			$this->error('还没有登录，正在跳转到登录页',U('Admin/Login/login'));
+			$this->redirect('Admin/Login/login');
 		}
 
 		//session存在时，不需要验证的权限
